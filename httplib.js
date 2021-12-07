@@ -8,12 +8,8 @@ http.createServer((req,res)=>{
         res.write(data);
     }
     else if(req.url==='/contact'){
-        let data = fs.readFileSync('Static/contact.html');
-        res.write(data);
-    }
-    else{
-        let data = fs.readFileSync('Static/err.html');
+        let data = fs.readFileSync('Static/contact.html').toString();
         res.write(data);
     }
     res.end();
-}).listen(process.env.PORT, ()=>{console.log("server is  running on port 8080")});
+}).listen(8080, ()=>{console.log("server is  running on port 8080")});
